@@ -8,7 +8,7 @@
   </thead>
 
   <tbody>
-    <% users.each do |user| %>
+    <% @users.each do |user| %>
       <tr>
         <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></td>
         <td><%= user.name %></td>

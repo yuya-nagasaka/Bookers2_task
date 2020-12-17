@@ -1,13 +1,16 @@
-<div class="row">
-	<div class="col-xs-3">
+<div class="container">
+  <div class="row">
+	
+	<div class="col-xs-9">
+		<% if flash[:danger] %>
+          <%= flash[:danger] %> 
+        <% end %>
 		<h2>User info</h2>
 		<%= render 'users/profile', user: @user %>
 
 		<h2>New book</h2>
 		<%= render 'books/form', book: @book %>
-	</div>
 
-	<div class="col-xs-9">
 		<h2>Books</h2>
 		<!--books一覧 -->
 		<table class="table table-hover table-inverse">
@@ -21,7 +24,7 @@
 			</thead>
 
 			<tbody>
-				<% books.each do |book| %>
+				<% @books.each do |book| %>
 					<tr>
 						<td>
 							<%= link_to user_path(book.user) do %>
@@ -36,5 +39,6 @@
 		</table>
 		<!--books一覧 -->
 	</div>
+  </div>
 </div>
 
